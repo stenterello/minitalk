@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   client.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ddelladi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/08 16:53:29 by ddelladi          #+#    #+#             */
+/*   Updated: 2022/02/08 16:55:54 by ddelladi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/minitalk.h"
 
 void	ft_send_string(pid_t serv_pid, char *str, int len)
@@ -6,10 +18,10 @@ void	ft_send_string(pid_t serv_pid, char *str, int len)
 
 	while (len--)
 	{
-		decrypt.bits = 0b10000000;
-		while (decrypt.bits)
+		g_decrypt.bits = 0b10000000;
+		while (g_decrypt.bits)
 		{
-			if (*str & decrypt.bits)
+			if (*str & g_decrypt.bits)
 				sig = kill(serv_pid, SIGUSR1);
 			else
 				sig = kill(serv_pid, SIGUSR2);
@@ -32,7 +44,7 @@ void	ack(int num)
 void	move_bits(int num)
 {
 	(void) num;
-	decrypt.bits >>= 1;
+	g_decrypt.bits >>= 1;
 }
 
 int	main(int argc, char **argv)

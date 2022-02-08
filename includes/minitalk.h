@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minitalk.h                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ddelladi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/08 16:54:11 by ddelladi          #+#    #+#             */
+/*   Updated: 2022/02/08 16:57:25 by ddelladi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef MINITALK_H
 # define MINITALK_H
 
@@ -15,6 +27,6 @@ typedef struct s_signal
 	int				pid;
 }	t_signal;
 
-t_signal	decrypt;
+t_signal	g_decrypt;
 
 #endif
