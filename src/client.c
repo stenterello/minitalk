@@ -12,6 +12,8 @@
 
 #include "../includes/minitalk.h"
 
+t_signal	g_decrypt;
+
 void	ft_send_string(pid_t serv_pid, char *str, int len)
 {
 	int	sig;

@@ -12,6 +12,8 @@
 
 #include "../includes/minitalk.h"
 
+t_signal	g_decrypt;
+
 void	ft_print_pid(void)
 {
 	pid_t	pid;

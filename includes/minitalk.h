@@ -27,6 +27,4 @@ typedef struct s_signal
 	int				pid;
 }	t_signal;
 
-t_signal	g_decrypt;
-
 #endif
